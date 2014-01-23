@@ -1,0 +1,23 @@
+{
+  "name": "image-gallery",
+  "author":"bugkngihtyyp",
+  "email":"bugkngihtyyp@gmail.com",
+  "version": "1.0.0",
+  "repository" :
+  { "type" : "git"
+    "url" : "https://github.com/bugknightyyp/image-gallery.git"
+  }
+  "dependencies": {
+    "jquery": ">=1.10.0"
+  }
+  "optionalDependencies": {
+    "seajs": "~2.1.1",
+    "seajs-style": "~1.0.2"
+  }
+  "devDependencies": {
+    "grunt-cmd-transport": "~0.1.1",
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.0"
+  }
+  
+}

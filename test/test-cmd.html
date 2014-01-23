@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图片查看器</title>
+<link  href="../css/image-gallery.css" rel="stylesheet" />
+<style>
+*{ padding:0; margin:0;}
+ul{ list-style:none;}
+
+#gallery{
+  width: 600px;
+}
+
+
+</style>
+</head>
+
+<body style=" padding: 20px 0 500px 300px; width:10000px;">
+<div style="display:none;">
+     <div class="btnArrow tn"></div>
+    <div class="btnArrow ty"></div>
+    <div class="btnArrow bn"></div>
+    <div class="btnArrow by"></div>
+    <div class="btnArrow ln"></div>
+    <div class="btnArrow ly"></div>
+    <div class="btnArrow rn"></div>
+    <div class="btnArrow ry"></div>
+</div>
+
+<div>
+
+<div  id="log"></div>
+
+<div class="Model_2" id="" style="display: none;">
+    <div class="Model_2_left_box" id="Model_2_left_box">
+       <img src="http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb01.jpg">
+       <div id="Model_2_description"></div>
+    </div>
+    <div class="Model_2_right_box">
+        <div  class="Model_2_first_btn firstDisable" id="Model_2_first_btn"><div></div></div>
+        <div class="Model_2_sImg_list" id="Model_2_sImg_list">
+             
+        </div>
+        <div  class="Model_2_second_btn secondDisable" id="Model_2_second_btn"><div></div></div>
+    </div>
+</div>
+
+<div  id="gallery">
+
+</div>
+
+
+
+
+</body>
+</html>
+<script>
+
+</script>
+<script src="http://wres.mangocity.com/js/lib/seajs/2.1.1/sea.js" ></script>
+<script>
+seajs.config({
+  alias: {
+    "jquery": "jquery/1.10.2/jquery-1.10.2.cmd"
+  }
+});
+seajs.use("../src/image-gallery.cmd.js",function(imageGallery){
+//debugger;
+	imageGallery({
+    wraperID: "#gallery",
+    source: [
+             {thumbnail: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb01.jpg",
+              normal: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb02.jpg", 
+              preview: "http://wimg.mangocity.com/img/w/integralMall/triumph_big1.jpg", 
+              describe:"很好"
+             },
+             {thumbnail: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb02.jpg",
+              normal: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb03.jpg", 
+              preview: "http://wimg.mangocity.com/img/w/integralMall/triumph_big1.jpg", 
+              describe:"很好"
+             },
+             {thumbnail: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb12.jpg",
+              normal: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb05.jpg", 
+              preview: "http://wimg.mangocity.com/img/w/integralMall/triumph_big1.jpg", 
+              describe:"很好"
+             },
+             {thumbnail: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb03.jpg",
+              normal: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb06.jpg", 
+              preview: "http://wimg.mangocity.com/img/w/integralMall/triumph_big1.jpg", 
+              describe: "很好"
+             },
+             {thumbnail: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb04.jpg",
+              normal: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb12.jpg", 
+              preview: "http://wimg.mangocity.com/img/w/integralMall/triumph_big1.jpg", 
+              describe: "很好"
+             },
+             {thumbnail: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb12.jpg",
+              normal: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb12.jpg", 
+              preview: "http://wimg.mangocity.com/img/w/integralMall/triumph_big1.jpg", 
+              describe:"很好"
+             },
+             {thumbnail: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb12.jpg",
+              normal: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb12.jpg", 
+              preview: "http://wimg.mangocity.com/img/w/integralMall/triumph_big1.jpg", 
+              describe:"很好"
+             },
+             {thumbnail: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb05.jpg",
+              normal: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb12.jpg", 
+              preview: "http://wimg.mangocity.com/img/w/integralMall/triumph_big1.jpg", 
+              describe:"很好"
+             },
+             {thumbnail: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb06.jpg",
+              normal: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb12.jpg", 
+              preview: "http://wimg.mangocity.com/img/w/integralMall/triumph_big1.jpg", 
+              describe: "很好"
+             },
+             {thumbnail: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb12.jpg",
+              normal: "http://wimg.mangocity.com/img/promotion/e110818shendu/bj_lb12.jpg", 
+              preview: "http://wimg.mangocity.com/img/w/integralMall/triumph_big1.jpg", 
+              describe: "很好"
+             }
+            ],
+    slideWay: 1,
+    switchThumbnailTime: 1000
+  })
+  
+  
+  
+});
+
+
+</script>
+
+
+
+

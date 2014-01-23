@@ -1,0 +1,71 @@
+.image-gallery{
+   border: 5px solid red;
+}
+.image-gallery .loading{
+  background: url("./img/loading.gif") center center no-repeat;
+}
+
+.normal-window{
+  position: relative;
+  width: 430px;
+  height: 300px;
+}
+
+.normal-window li{
+  position: absolute;
+  left: 0;
+  to0p: 0;
+  z-index: 0;
+}
+
+.thumbnail-on{
+ 
+}
+.thumbnail-on img{
+  border: 5px solid red;
+}
+
+.thumbnail-btn{
+  height: 50px;
+  border: 1px solid #ccc;
+  color: green;
+}
+
+.thumbnail-btn-first{
+
+}
+
+.thumbnail-btn-first-disable{
+  color: red;
+}
+
+.thumbnail-btn-second{
+
+}
+
+.thumbnail-btn-second-disable{
+  color: red;
+}
+
+.normal-window{
+  position: relative;
+  width: 430px;
+  height: 287px;
+  overflow: hidden;
+}
+
+.preview-window{
+  position: absolute;
+  overflow: hidden;
+}
+
+.preview-window img{
+  position: absolute;
+}
+
+.gallery-magnifier{
+  position: absolute;
+  z-index: 2;
+  opacity: 0.6;
+  background-color: #ccc;
+}
