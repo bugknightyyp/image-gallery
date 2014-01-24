@@ -1,10 +1,9 @@
 .image-gallery{
-   border: 5px solid red;
+
 }
 .image-gallery .loading{
   background: url("./img/loading.gif") center center no-repeat;
 }
-
 .normal-window{
   position: relative;
   width: 430px;
@@ -14,38 +13,29 @@
 .normal-window li{
   position: absolute;
   left: 0;
-  to0p: 0;
+  top: 0;
   z-index: 0;
 }
 
-.thumbnail-on{
- 
-}
-.thumbnail-on img{
-  border: 5px solid red;
+.thumbnail-wrap {
+  float: left;
+  overflow: hidden;
 }
 
-.thumbnail-btn{
-  height: 50px;
-  border: 1px solid #ccc;
-  color: green;
+.thumbnail-wrap img{
+  -moz-box-sizing: border-box;  /*Firefox3.5+*/
+  -webkit-box-sizing: border-box; /*Safari3.2+*/
+  -o-box-sizing: border-box; /*Opera9.6*/
+  -ms-box-sizing: border-box; /*IE8*/
+  box-sizing: border-box;  /*W3C标准(IE9+，Safari5.1+,Chrome10.0+,Opera10.6+都符合box-sizing的w3c标准语法)*/
+  /*above pleas see http://www.w3cplus.com/content/css3-box-sizing*/
+  
+  width: 100%;
+  height: 100%;
 }
 
-.thumbnail-btn-first{
 
-}
 
-.thumbnail-btn-first-disable{
-  color: red;
-}
-
-.thumbnail-btn-second{
-
-}
-
-.thumbnail-btn-second-disable{
-  color: red;
-}
 
 .normal-window{
   position: relative;
@@ -68,4 +58,5 @@
   z-index: 2;
   opacity: 0.6;
   background-color: #ccc;
+  cursor: move;
 }

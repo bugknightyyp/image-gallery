@@ -4,14 +4,15 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 	transport:{
-	     options :{
+	    options :{
 		   idleading:'<%= pkg.name %>/<%= pkg.version %>/',
-		   debug:false
+		   debug:true
 	    },
 	   chain :{
-	    files: [{
+        files: [{
+          expand: true,
                 cwd: 'src',
-                src: '*.cmd.js',
+                src: '*.js',
                 dest: 'temp'
             }]
 	   }
@@ -35,9 +36,9 @@ module.exports = function(grunt) {
   
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-cmd-transport');
-  grunt.loadNpmTasks('grunt-contrib-concat');
+  //grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-   grunt.loadNpmTasks('grunt-contrib-clean');
+  // grunt.loadNpmTasks('grunt-contrib-clean');
   // Default task(s).
   grunt.registerTask('default', ['transport',"concat","correct","uglify","clean"]);
   /*思路说明：先将js，css提取id和依赖转换成cmd模块，

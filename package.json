@@ -1,23 +1,38 @@
 {
+  "family": "bugknightyyp",
   "name": "image-gallery",
-  "author":"bugkngihtyyp",
-  "email":"bugkngihtyyp@gmail.com",
   "version": "1.0.0",
-  "repository" :
-  { "type" : "git"
-    "url" : "https://github.com/bugknightyyp/image-gallery.git"
-  }
-  "dependencies": {
-    "jquery": ">=1.10.0"
-  }
-  "optionalDependencies": {
-    "seajs": "~2.1.1",
-    "seajs-style": "~1.0.2"
-  }
+  "description": "image manage",
+  "homepage": "https://github.com/bugknightyyp/image-gallery",
+  "author": "bugknightyyp",
+  "maintainers": [
+    "bugknightyyp"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bugknightyyp/image-gallery.git"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "keywords": [
+    "image-gallery",
+    "jquery-plugin"
+  ],
+  "licenses": "MIT",
+  "spm": {
+    "output": [
+      "image-gallery.js",
+      "image-gallery.css"
+    ],
+    "alias": {
+      "jquery": "jquery/jquery/1.10.1/jquery"
+    },
+    "devAlias": {},
+    "engines": {}
+  },
   "devDependencies": {
-    "grunt-cmd-transport": "~0.1.1",
-    "grunt": "~0.4.1",
-    "grunt-contrib-uglify": "~0.2.0"
+    "grunt-cmd-transport": "~0.4.1",
+    "grunt-contrib-copy": "~0.5.0"
   }
-  
 }

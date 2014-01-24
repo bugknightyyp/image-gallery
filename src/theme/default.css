@@ -1,0 +1,53 @@
+.thumbnail-menu{
+  position: relative;
+  width: 430px;
+  margin-top: 10px;
+}
+
+.thumbnail-wrap{
+  cursor: pointer;
+}
+
+.thumbnail-btn{
+  position: absolute;
+  right: 0;
+ 
+  width: 50px;
+  border: 1px solid #ccc;
+  
+  background-image: url(./img/image-galery.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.thumbnail-btn-first{
+  height: 24px;
+  top: 0;
+  border-radius: 3px 3px 0 0; 
+  background-position: 15px -56px;
+  
+}
+
+.thumbnail-btn-first-disable{
+  background-position: 15px 4px;
+  cursor: auto;
+}
+
+.thumbnail-btn-second{
+  height: 23px;
+  bottom: 0;
+  border-radius: 0 0 3px 3px ; 
+  background-position: 15px -89px;
+}
+
+.thumbnail-btn-second-disable{
+  background-position: 15px -28px;
+  cursor: auto;
+}
+
+.thumbnail-on{
+ 
+}
+.thumbnail-on img{
+  border: 5px solid #9c3;
+}
