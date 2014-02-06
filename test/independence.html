@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Basic Test Suite</title>
+  <!-- Load local QUnit. -->
+  <link href="http://code.jquery.com/qunit/qunit-1.13.0.css" rel="stylesheet" />
+  <link href="../css/image-gallery.css" rel="stylesheet" />
+  <link href="../css/theme/default.css" rel="stylesheet" />
+  
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="http://code.jquery.com/qunit/qunit-1.13.0.js"></script>
+  <!-- Load local lib and tests. -->
+  <script src="../src/init-parameters.js"></script>
+  <script src="unit/init-parameters-spec.js"></script>
+  
+  <script src="../src/get-model-params.js"></script>
+  <script src="unit/get-model-params-spec.js"></script>
+  
+  <script src="../src/init-structure.js"></script>
+  <script src="unit/init-structure-spec.js"></script>
+</head>
+<body>
+  <h1 id="qunit-header">QUnit测试</h1>
+  <h2 id="qunit-banner"></h2>
+  <div id="qunit-testrunner-toolbar"></div>
+  <h2 id="qunit-userAgent"></h2>
+  <ol id="qunit-tests"></ol>
+  <div id="qunit-fixture">测试标记</div> 
+</body>
+</html>

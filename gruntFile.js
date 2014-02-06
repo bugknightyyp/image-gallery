@@ -3,48 +3,78 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-	transport:{
-	    options :{
-		   idleading:'<%= pkg.name %>/<%= pkg.version %>/',
-		   debug:true
-	    },
-	   chain :{
-        files: [{
-          expand: true,
-                cwd: 'src',
-                src: '*.js',
-                dest: 'temp'
-            }]
-	   }
-	},
-	uglify: {
-		options: {
-		 banner: '/*! <%= pkg.name %> -v <%= pkg.version%>  <%= grunt.template.today("yyyy-mm-dd") %> */\n',
-			//cwd:"dist"
-		},
-		build: {
-			files:{
-				"dist/<%= pkg.name %>.cmd.js":["temp/*.cmd.js"],
-				"dist/<%= pkg.name %>.js":["src/<%= pkg.name %>.js"]
-			}
+    qunit: {
+      all: {
+          options: {
+            urls: [
+              'http://localhost:<%= connect.server.options.port %>/test/independence.html'
+            ]
+          }
       }
+    },
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          base: '.'
+        }
+      }
+    },
+    concat: {
+      options: {
+        separator: ';'
+      },
+      basic: {
+        options: {
+          banner: 'var imageGallery = function() {',
+          footer: '}'
+        },
+        src: ['src/init-parameters.js', 
+            'src/init-structure.js',
+            'src/get-model-params.js',
+            'src/fresh-display-state.js',
+            'src/auto-switch-screen.js',
+            'src/preview-window.js',
+            'src/preload-image.js',
+            'src/event.js',
+            'src/start.js'],
+        dest: 'dist/image-gallery.js',
+      },
+      cmd: {
+        options: {
+          banner: 'define(function(require, exports, module){\n'
+            +'var $ = require("jquery");\n'
+            +'var imageGallery = function(options) {',
+          footer: '}\n'
+            +'  $.fn.imageGallery = imageGallery;\n'
+            +'  module.exports = imageGallery;\n})'
+        },
+        src: "<%= concat.basic.src%>",
+        dest: 'dist/image-gallery.js',
+      }
+    },
+    watch: {
+      options: {
+        atBegin: true
+      },
+      scripts: {
+        files: 'src/*.js',
+        tasks: ['concat:cmd']
+      },
     }
 	
   });
 
 
-  
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-cmd-transport');
-  //grunt.loadNpmTasks('grunt-contrib-concat');
+ 
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  // grunt.loadNpmTasks('grunt-contrib-clean');
-  // Default task(s).
-  grunt.registerTask('default', ['transport',"concat","correct","uglify","clean"]);
-  /*思路说明：先将js，css提取id和依赖转换成cmd模块，
-  再合并需要合并的文件，
-  合并后，相对依赖的文件的相对地址就会发生改变，那么就要纠正下相对路径，
-  压缩了所需的文件后，
-  最后清除没用的文件*/
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-qunit');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  
+  grunt.loadNpmTasks('grunt-cmd-transport');
+   
+  grunt.registerTask('test', ['connect',"qunit"]);
 
 };

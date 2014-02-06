@@ -1,0 +1,24 @@
+{
+  "name": "image-gallery",
+  "main": "image-gallery.js",
+  "version": "0.0.0",
+  "authors": [
+    "bugknightyyp <bugknightyyp@gmail.com>"
+  ],
+  "description": "this is jquery for managering iamges",
+  "keywords": [
+    "jquery-plugin"
+  ],
+  "license": "MIT",
+  "homepage": "yyper.com",
+  "dependencies": {
+    "jquery": "1.10.2"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

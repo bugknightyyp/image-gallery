@@ -26,13 +26,20 @@
       "image-gallery.css"
     ],
     "alias": {
-      "jquery": "jquery/jquery/1.10.1/jquery"
+      "jquery": "sea-modules\\jquery\\jquery\\1.10.1\\jquery",
+      "sea": "sea-modules\\seajs\\seajs\\2.1.1\\sea",
+      "sea.js.map": "sea-modules\\seajs\\seajs\\2.1.1\\sea.js.map"
     },
     "devAlias": {},
     "engines": {}
   },
   "devDependencies": {
+    "grunt": "*",
     "grunt-cmd-transport": "~0.4.1",
-    "grunt-contrib-copy": "~0.5.0"
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-qunit": "~0.4.0",
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.3"
   }
 }

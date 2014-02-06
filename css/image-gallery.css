@@ -15,6 +15,11 @@
   left: 0;
   top: 0;
   z-index: 0;
+  opacity: 0;
+}
+
+.thumbnail-window{
+  overflow: hidden;
 }
 
 .thumbnail-wrap {
